@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const taskSchema = new mongoose.Schema({
+const todoSchema = new mongoose.Schema({
     
     task: {
         type: String,
@@ -33,3 +33,5 @@ todoSchema.virtual("formattedDate").get(function () {
 });
 
 todoSchema.set("toJSON", { virtuals: true });
+
+export default mongoose.model("Todo", todoSchema);
